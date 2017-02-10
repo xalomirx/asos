@@ -1,30 +1,5 @@
-.main-nav {
-    font-size: 16px;
-}
-
-.navbar-brand {
-    padding: 5px 10px;
-    padding-right: 20px;
-}
-
-.navbar-nav > li > a {
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.main-intro__img {
-    height: 459px;
-    background: url("../img/VashStampede.png") no-repeat;
-    background-size: 100% 459px;
-}
-
-.main-intro__img,
-.main-intro__jumbotron {
-    padding: 0;
-}
-
-
-
-
-
-
+/*Подключаем стили основных страниц
+---------------------------------------*/
+@import url(index.css);
+@import url(auth.css);
+@import url(registration.css);

@@ -4,77 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AnimaFan</title>
+    <title>AnimaSoS</title>
     <!-- Bootstrap -->
     <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="container">
     <header class="page-header">
         <h1 class="page-header__site-title text-center">AnimaSos</h1>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="main-logo" width="75" height="75px"></a>
-                </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="main-nav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Гостевая</a></li>
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Участники</a></li>
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="main-logo" width="75"
+                                                                       height="75px"></a>
+                    </div>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Анима <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Новинки</a></li>
-                                <li><a href="#">Лучшее за месяц</a></li>
-                                <li><a href="#">Лучшее за все время</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Скачать</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="main-nav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Гостевая</a></li>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Участники</a></li>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Авторизация <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="auth.html">Войти</a></li>
-                                <li><a href="#">Зарегистрироваться</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Анима <b
+                                        class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Новинки</a></li>
+                                    <li><a href="#">Лучшее за месяц</a></li>
+                                    <li><a href="#">Лучшее за все время</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Скачать</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Авторизация <b
+                                        class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="auth.html">Войти</a></li>
+                                    <li><a href="registration.html">Зарегистрироваться</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
     </header>
 
-    <section class="main-intro container">
-        <div class="row">
-            <div class="main-intro__img col-lg-6"></div>
-            <div class="main-intro__jumbotron col-lg-6">
-                <div class="jumbotron">
-                    <h1>Cкажи привет Аниме!</h1>
-                    <p>Любишь Аниму? Конечно да, а если нет, то ты не с нами, а кто не с нами тот
+
+    <main class="main-intro row">
+        <div class="main-intro__img col-lg-6"></div>
+        <div class="main-intro__jumbotron col-lg-6">
+            <div class="jumbotron">
+                <h1>Cкажи привет Аниме!</h1>
+
+                <p>Любишь Аниму? Конечно да, а если нет, то ты не с нами, а кто не с нами тот
                     под нами. Погружайся в мир настоящего исскуства и удовольствия на нашем сайте.</p>
-                    <p><a class="btn btn-primary btn-lg" role="button">Узнать больше</a></p>
-                </div>
+
+                <p><a class="btn btn-primary btn-lg" role="button">Узнать больше</a></p>
             </div>
         </div>
-    </section>
+    </main><!-- /main-intro row-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="libs/bootstrap/js/bootstrap.js"></script>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="libs/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
