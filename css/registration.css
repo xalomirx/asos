@@ -1,0 +1,40 @@
+.main-registration__img {
+    min-height: 503px;
+    padding: 0;
+}
+
+.main-registration__img:first-child {
+    background: url("../img/watashi@390.png") no-repeat;
+    background-size: 100% auto;
+}
+
+.main-registration__img:last-child {
+    background: url("../img/akashi@390.jpg") no-repeat;
+    background-size: 100% auto;
+}
+
+.form-registration {
+    background: url("../img/reg-pattern.png");
+}
+
+.form-registration__item-list {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 250px;
+}
+
+.form-control {
+    max-width: 214px;
+}
+
+@media (max-width: 991px) {
+    .form-registration {
+        background: none;
+    }
+
+    .btn-block {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+}
