@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AnimaSoS</title>
     <!-- Bootstrap -->
-    <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="http://testsite/learn/animefan/asos/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://testsite/learn/animefan/asos/css/style.css">
 </head>
 <body>
 <div class="container">
@@ -26,14 +26,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="main-logo" width="75"
-                                                                       height="75px"></a>
+                        <a class="navbar-brand" href="http://testsite/learn/animefan/asos/index.php"><img src="http://testsite/learn/animefan/asos/img/logo.png" alt="main-logo" width="75"
+                                                                                                          height="75px"></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="main-nav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">Гостевая</a></li>
+                            <li><a href="http://testsite/learn/animefan/asos/index.php">Гостевая</a></li>
                             <li><a href="#">Новости</a></li>
                             <li><a href="#">Участники</a></li>
 
@@ -55,8 +55,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Авторизация <b
                                         class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="auth.html">Войти</a></li>
-                                    <li><a href="registration.html">Зарегистрироваться</a></li>
+                                    <li><a href="?mode=auth">Войти</a></li>
+                                    <li><a href="?mode=reg">Зарегистрироваться</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -66,50 +66,26 @@
         </div>
     </header>
 
-    <main class="main-registration row">
-        <div class="main-registration__img hidden-xs hidden-sm col-md-4 col-lg-4"></div>
-        <form action="#" name="registration" class="form-registration col-md-4 col-lg-4">
-            <h2 class="form-registration__header text-center">Присоединяйтесь</h2>
+    <div class="container">
 
-            <div class="form-registration__item-list">
-                <label class="form-registration__item">
-                    Ваш email: <br>
-                    <input class="form-control" type="text" name="registration[email]">
-                </label>
-                <label class="form-registration__item">
-                    Ваш никнейм :<br>
-                    (без специальных символов)
-                    <input type="text" class="form-control" name="registration[username]">
-                </label>
-                <label class="form-registration__item">
-                    Придумайте пароль:<br>
-                    (минимум 8 символов)
-                    <input type="text" class="form-control" name="registration[password]">
-                </label>
-                <label class="form-registration__item">
-                    Ваш возраст:<br>
-                    (не обязательно)
-                    <input type="number" min="8" class="form-control" name="registration[age]">
-                </label>
-                <label class="form-registration__item">
-                    Номер вашей кредитной карты:<br>
-                    (Если введешь текст,тоби пизда)
-                    <input type="text" class="form-control" name="registration[money]">
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block">
-                Зарегистрироваться
-            </button>
-
+        <form class="form-signin" name="auth" role="form">
+            <h2 class="form-signin-heading">Пожалуйста, войдите</h2>
+            <input type="email" class="form-control" placeholder="Email address" name="auth[email]" required autofocus>
+            <input type="password" class="form-control" placeholder="Password" required name="auth[password]">
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me" name="auth[remember_me]"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         </form>
-        <div class="main-registration__img hidden-xs hidden-sm col-md-4 col-lg-4"></div>
-    </main>
+
+    </div> <!-- /container -->
+
 </div>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="libs/bootstrap/js/bootstrap.js"></script>
+<script src="http://testsite/learn/animefan/asos/libs/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
