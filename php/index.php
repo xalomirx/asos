@@ -6,25 +6,30 @@
  * Time: 18:46
  */
 
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 session_start();
 
 $mode = isset($_GET['mode']) ? $_GET['mode'] : false;
 
 
 
-include 'php/funct.php';
+include 'funct.php';
 
-include 'db/db.php';
 
 switch($mode) {
     case 'reg':
-        include 'php/registration.php';
-        include 'html/registration.html';
+        include 'registration.php';
+        include '../html/registration.html';
         die;
     case 'auth':
-        include 'html/auth.html';
+        include 'authentication.php';
+        include '../html/auth.html';
         die;
 }
 
 
-include 'html/index.html';
+include '../html/index.html';
