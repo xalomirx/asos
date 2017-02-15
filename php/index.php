@@ -10,7 +10,7 @@ session_start();
 
 $mode = isset($_GET['mode']) ? $_GET['mode'] : false;
 
-include 'config.php';
+
 
 include 'php/funct.php';
 

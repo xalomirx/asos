@@ -6,8 +6,13 @@
  * Time: 19:56
  */
 
-function ServerMessage($message) {
-    echo $message;
+function dd($value) {
+    echo '<pre>';
+    var_dump($value);
+}
+
+function ServerMessage($message, $path) {
+    include $path;
     die;
 }
 
@@ -17,7 +22,7 @@ function field_length($min, $max) {
     }
 }
 
-function unique_field($db_field, $form_field) {
+function unique_field($db_field, $form_field, $db_connect) {
     $a = mysqli_query($db_connect, "SELECT * FROM users WHERE $db_field = '$form_field'");
     if ($a->num_rows) {
         ServerMessage("Такой $db_field уже занят");

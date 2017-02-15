@@ -1,0 +1,32 @@
+.successfull-reg {
+    text-align: center;
+    background: url("../img/sus-reg-pattern.png");
+}
+
+.successfull-reg__img {
+    min-height: 600px;
+    background: url("../img/akashi2@fs.png") no-repeat;
+    background-size: 100% auto;
+}
+
+.successfull-reg__message-block {
+    padding-top: 200px;
+    font-size: 30px;
+}
+
+.successful-reg__btn {
+    margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+
+    .successfull-reg {
+        background: none;
+        padding: 15px;
+    }
+
+    .successfull-reg__message-block {
+        padding-top: 50px;
+        font-size: 25px;
+    }
+}

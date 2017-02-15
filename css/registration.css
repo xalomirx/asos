@@ -17,6 +17,12 @@
     background: url("../img/reg-pattern.png");
 }
 
+.form-registration__server-message {
+    color: red;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
 .form-registration__item-list {
     margin: 0 auto;
     margin-bottom: 20px;
