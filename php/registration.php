@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-
+$dbSettings = require 'db.php';
 
 if (isset($_POST['registration'])) {
     $form_data = $_POST['registration'];
@@ -46,7 +46,7 @@ if (isset($_POST['registration'])) {
     $username = $form_data['username'];
     $password = md5($form_data['password']);
     $age = $form_data['age'];
-    $db_connect = mysqli_connect('localhost', 'root', 'love1lost', 'asos');
+    $db_connect = mysqli_connect($dbSettings['server'], $dbSettings['username'], $dbSettings['password'], $dbSettings['db']);
 
     if (!$db_connect) {
         ServerMessage('GOVNO', '../html/registration.html');

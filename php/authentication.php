@@ -10,6 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
+$dbSettings = require 'db.php';
 
 if (isset($_POST['authentication'])) {
     $form_data = $_POST['authentication'];
@@ -33,7 +34,7 @@ if (isset($_POST['authentication'])) {
 
     $email = $form_data['email'];
     $password = md5($form_data['password']);
-    $db_connect = mysqli_connect('localhost', 'root', 'love1lost', 'asos');
+    $db_connect = mysqli_connect($dbSettings['server'], $dbSettings['username'], $dbSettings['password'], $dbSettings['db']);
 
     if (!$db_connect) {
         ServerMessage('GOVNO', '../html/auth.html');

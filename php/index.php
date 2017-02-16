@@ -17,8 +17,17 @@ $mode = isset($_GET['mode']) ? $_GET['mode'] : false;
 $user = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 
 
-
 include 'funct.php';
+$dbSettings = require 'db.php';
+
+//Connect with DB MySQL
+$db_connect = mysqli_connect(
+    $dbSettings['server'],
+    $dbSettings['username'],
+    $dbSettings['password'],
+    $dbSettings['db']
+);
+
 
 
 switch($mode) {
