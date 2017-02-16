@@ -14,6 +14,7 @@ ini_set('display_startup_errors', 1);
 session_start();
 
 $mode = isset($_GET['mode']) ? $_GET['mode'] : false;
+$user = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 
 
 
@@ -29,6 +30,9 @@ switch($mode) {
         include 'authentication.php';
         include '../html/auth.html';
         die;
+    case 'usr':
+        include '../html/users.html';
+        die();
 }
 
 

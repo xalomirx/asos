@@ -6,9 +6,12 @@
  * Time: 19:56
  */
 
+$message = null;
+
 function dd($value) {
     echo '<pre>';
     var_dump($value);
+    die();
 }
 
 function ServerMessage($message, $path) {

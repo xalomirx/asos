@@ -51,16 +51,22 @@ if (isset($_POST['authentication'])) {
         ServerMessage('неправильно введен пароль', '../html/auth.html');
     }
 
-    $username = mysqli_query($db_connect, "SELECT username FROM users WHERE email='$email'");
+    $username_query = mysqli_query($db_connect, "SELECT username FROM users WHERE email='$email'");
+    $username = mysqli_fetch_assoc($username_query);
 
-    $_SESSION['username'] = $username;
-
-    if (isset($form_data['remember_me'])) {
-        SetCookie('auth_user', 'checkbox', time() + 60 * 60 * 24, '/');
-    }
+    $_SESSION['username'] = $username['username'];
 
     header('Location: index.php');
     die;
+
+
+
+//    if (isset($form_data['remember_me'])) {
+//        SetCookie('auth_user', 'checkbox', time() + 60 * 60 * 24, '/');
+//    }
+//
+//    header('Location: index.php');
+//    die;
 }
 
 

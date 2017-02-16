@@ -61,7 +61,7 @@ if (isset($_POST['registration'])) {
     if (!$write_db) {
         ServerMessage('Ошибка записи в БД', '../html/registration.html');
     } else {
-        ServerMessage('Вы успешно зарегистрированны', '../html/successful_reg.html');
+        ServerMessage('null', '../html/successful_reg.html');
     }
 }
 

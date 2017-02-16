@@ -1,0 +1,19 @@
+.main-block {
+    padding-left: 50px;
+}
+
+.users-block {
+    min-height: 500px;
+    margin-top: 20px;
+    padding: 1px;
+    padding-top: 10px;
+    border: 3px solid #5799e0;
+    border-left: 50px solid #5799e0;
+    border-radius: 8%;
+}
+
+.main-block__img {
+    min-height: 600px;
+    background: url("../img/flcl@fs.png") no-repeat;
+    background-size: 100% 600px;
+}
