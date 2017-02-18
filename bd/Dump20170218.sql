@@ -24,12 +24,14 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL,
-  `username` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `username` varchar(14) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `age` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +40,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'xalomirx@gmail.com','SpiceCowboy','1c63129ae9db9c60c3e8aa94d3e00495','22'),(2,'xalomirx@gmail.com','SpiceCowboy','1c63129ae9db9c60c3e8aa94d3e00495','22'),(3,'petuch@gmail.com','PapaCock','1c63129ae9db9c60c3e8aa94d3e00495',''),(4,'','','d41d8cd98f00b204e9800998ecf8427e',''),(5,'','','d41d8cd98f00b204e9800998ecf8427e',''),(6,'','','d41d8cd98f00b204e9800998ecf8427e',''),(7,'','','d41d8cd98f00b204e9800998ecf8427e',''),(8,'','','d41d8cd98f00b204e9800998ecf8427e',''),(9,'','','d41d8cd98f00b204e9800998ecf8427e',''),(10,'','','d41d8cd98f00b204e9800998ecf8427e',''),(11,'','','d41d8cd98f00b204e9800998ecf8427e',''),(12,'','','d41d8cd98f00b204e9800998ecf8427e',''),(13,'','','d41d8cd98f00b204e9800998ecf8427e',''),(14,'','','d41d8cd98f00b204e9800998ecf8427e',''),(15,'','','d41d8cd98f00b204e9800998ecf8427e',''),(16,'horror@core.cz','Rezznik','1c63129ae9db9c60c3e8aa94d3e00495','29'),(17,'emo@hc.us','EmoWar','1c63129ae9db9c60c3e8aa94d3e00495','16'),(18,'Alomir@bk.com','Alomir','1c63129ae9db9c60c3e8aa94d3e00495','16'),(19,'saha@pd.re','Owner','1c63129ae9db9c60c3e8aa94d3e00495','11'),(20,'Maksim228@bk.com','MaksNAGIBATOR','1c63129ae9db9c60c3e8aa94d3e00495','26');
+INSERT INTO `users` VALUES (1,'xalomirx@gmail.com','SpiceCowboy','1c63129ae9db9c60c3e8aa94d3e00495',22),(2,'Alomir@bk.com','Alomir','1c63129ae9db9c60c3e8aa94d3e00495',16),(3,'phelosoph@coc.com','Jokir','1c63129ae9db9c60c3e8aa94d3e00495',12),(4,'scrappy@gmail.com','Scrappy','1c63129ae9db9c60c3e8aa94d3e00495',21),(5,'cocos@cock.com','LeCock','1c63129ae9db9c60c3e8aa94d3e00495',33),(6,'pocic@sos.cz','Posic','1c63129ae9db9c60c3e8aa94d3e00495',23);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-16 22:06:24
+-- Dump completed on 2017-02-18 14:13:41
