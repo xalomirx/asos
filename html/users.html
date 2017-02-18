@@ -1,100 +1,57 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AnimaSoS</title>
-    <!-- Bootstrap -->
-    <link href="http://testsite/learn/animefan/asos/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://testsite/learn/animefan/asos/css/style.css">
-</head>
-<body>
-<div class="container">
-    <header class="page-header">
-        <h1 class="page-header__site-title text-center">AnimaSos</h1>
-
-        <div class="container">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="http://testsite/learn/animefan/asos/php/index.php"><img src="http://testsite/learn/animefan/asos/img/logo.png" alt="main-logo" width="75"
-                                                                                                              height="75px"></a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="main-nav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="http://testsite/learn/animefan/asos/php/index.php">Гостевая</a>
-                            </li>
-                            <li><a href="#">Новости</a></li>
-                            <li><a href="?mode=usr">Участники</a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Анима <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Новинки</a></li>
-                                    <li><a href="#">Лучшее за месяц</a></li>
-                                    <li><a href="#">Лучшее за все время</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Скачать</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <?php if (isset($user)): ?>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?= $user ?></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?mode=auth">Личный Кабинет</a></li>
-                                    <li><a href="?mode=reg">Выйти</a></li>
-                                </ul>
-                            </li>
-                            <?php else: ?>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Авторизация <b
-                                        class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="?mode=auth">Войти</a></li>
-                                    <li><a href="?mode=reg">Зарегистрироваться</a></li>
-                                </ul>
-                            </li>
-                            <?php endif; ?>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-        </div>
-    </header>
+<?php require 'header.html'; ?>
 
     <main class="main-block row">
         <div class="users-block col-md-7 col-lg-7">
+            <div class="users-block__header navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <a href="?mode=usradd" class="users-block__btn btn btn-primary navbar-left">Добавить нового
+                        пользователя</a>
+
+                    <form action="" method="get" class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" name="search" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Найти</button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+            <?php if(isset($not_auth_del)): ?>
+            <p>Авторизируйтесь пожалуйста</p>
+            <?php endif; ?>
+
+            <table class="users-block__table table">
+                <tr>
+                    <th>ID</th>
+                    <th>EMAIL</th>
+                    <th>USERNAME</th>
+                    <th>AGE</th>
+                    <th>DELETE</th>
+                    <th>EDIT</th>
+                </tr>
+                <?php if (!isset($search_toggle)) : ?>
+                <?= $result ?>
+
+                <?php else : ?>
+                <?= $search_result ?>
+
+
+                <?php endif; ?>
+            </table>
+            <div>
+                <?= $pag ?>
+            </div>
 
         </div>
 
-        <div class="main-block__img hidden-xs hidden-sm col-md-5 col-lg-5">
-        </div>
+<div class="main-block__img hidden-xs hidden-sm col-md-5 col-lg-5">
+</div>
 
-    </main>
+</main>
 
-    </div>
+</div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://testsite/learn/animefan/asos/libs/bootstrap/js/bootstrap.js"></script>
+<?php require 'footer.html'; ?>
 
 </body>
 </html>

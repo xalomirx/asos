@@ -1,0 +1,70 @@
+<?php require 'header.html'; ?>
+
+    <main class="main-block row">
+        <div class="form-users col-md-7 col-lg-7">
+            <?php if(isset($user)): ?>
+            <form action="" method="post" class="form-users__form" name="userform">
+                <div class="form-users__item-list">
+                    <?php if ($message): ?>
+                    <p class="form-users__server-message"><?= $message ?></p>
+                    <?php endif; ?>
+                    <label class="form-users__item">
+                        Email: <br>
+                        <?php if(!isset($editid)): ?>
+                        <input class="form-control" type="text" name="userform[email]" required autofocus maxlength="30">
+                        <?php else: ?>
+                        <input class="form-control" type="text" name="userform[email]" required autofocus maxlength="30"
+                        value="<?= $db_email ?>">
+                        <?php endif; ?>
+                    </label>
+                    <label class="form-users__item">
+                        Никнейм :<br>
+                        <?php if(!isset($editid)): ?>
+                        <input type="text" class="form-control" name="userform[username]" required maxlength="15">
+                        <?php else: ?>
+                        <input type="text" class="form-control" name="userform[username]" required maxlength="15"
+                        value="<?= $db_username ?>">
+                        <?php endif; ?>
+                    </label>
+                    <label class="form-users__item">
+                        Пароль:<br>
+                        <input type="password" class="form-control" name="userform[password]" required>
+                    </label>
+                    <label class="form-users__item">
+                        ID:<br>
+                        <?php if(!isset($editid)): ?>
+                        <input type="text" class="form-control" name="userform[id]" required maxlength="15">
+                        <?php else: ?>
+                        <input type="text" class="form-control" name="userform[id]" required maxlength="15"
+                        value="<?= $db_id ?>">
+                        <?php endif; ?>
+                    </label>
+                    <label class="form-users__item">
+                        Возраст:<br>
+                        <?php if(!isset($editid)): ?>
+                        <input type="number" min="8" class="form-control" name="userform[age]">
+                        <?php else: ?>
+                        <input type="number" min="8" class="form-control" name="userform[age]"
+                        value="<?= $db_age ?>">
+                        <?php endif; ?>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">
+                    Принять
+                </button>
+            </form>
+            <?php else: echo 'У вас нет прав. Авторизируйтесь, пожалуйста' ?>
+            <?php endif; ?>
+        </div>
+
+        <div class="main-block__img hidden-xs hidden-sm col-md-5 col-lg-5">
+        </div>
+
+    </main>
+
+</div>
+
+<?php require 'footer.html'; ?>
+
+</body>
+</html>

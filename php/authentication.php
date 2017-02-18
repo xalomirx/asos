@@ -33,11 +33,7 @@ if (isset($_POST['authentication'])) {
 
     $email = $form_data['email'];
     $password = md5($form_data['password']);
-    $db_connect = mysqli_connect('localhost', 'root', 'love1lost', 'asos');
 
-    if (!$db_connect) {
-        ServerMessage('GOVNO', '../html/auth.html');
-    }
 
     mysqli_query($db_connect, 'SET NAMES utf8');
 

@@ -25,10 +25,10 @@ function field_length($min, $max) {
     }
 }
 
-function unique_field($db_field, $form_field, $db_connect) {
+function unique_field($db_field, $form_field, $db_connect, $path) {
     $a = mysqli_query($db_connect, "SELECT * FROM users WHERE $db_field = '$form_field'");
     if ($a->num_rows) {
-        ServerMessage("Такой $db_field уже занят");
+        ServerMessage("Такой $db_field уже занят", $path);
     }
 }
 

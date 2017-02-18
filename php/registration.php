@@ -46,16 +46,11 @@ if (isset($_POST['registration'])) {
     $username = $form_data['username'];
     $password = md5($form_data['password']);
     $age = $form_data['age'];
-    $db_connect = mysqli_connect('localhost', 'root', 'love1lost', 'asos');
-
-    if (!$db_connect) {
-        ServerMessage('GOVNO', '../html/registration.html');
-    }
 
     mysqli_query($db_connect, 'SET NAMES utf8');
 
-    unique_field('email', $email, $db_connect);
-    unique_field('username', $username, $db_connect);
+    unique_field('email', $email, $db_connect, '../html/registration.html');
+    unique_field('username', $username, $db_connect, '../html/registration.html');
 
     $write_db = mysqli_query($db_connect, "INSERT INTO users (email, username, password, age) VALUES ('$email','$username', '$password', '$age')");
     if (!$write_db) {

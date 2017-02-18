@@ -6,13 +6,13 @@
  * Time: 19:07
  */
 
-$db_server = 'localhost';
-$db_username = 'root';
-$db_password = 'love1lost';
-$db_name = 'asos';
 
 //Connect with DB MySQL
-$db_connect = mysqli_connect($db_server, $db_username, $db_password, $db_name);
+$db_connect = mysqli_connect('localhost', 'root', 'love1lost', 'asos');
+
+if (!$db_connect) {
+    ServerMessage('GOVNO', '../html/auth.html');
+}
 
 
 
