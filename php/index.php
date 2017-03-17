@@ -18,10 +18,6 @@ $user = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 $del = isset($_GET['del']) ? $_GET['del'] : null;
 $editid = isset($_GET['id']) ? $_GET['id'] : null;
 $search_toggle = isset($_GET['search']) ? $_GET['search'] : null;
-//$exit = isset($_GET['auth']) ? $_GET['auth'] : null;
-
-
-
 
 include 'funct.php';
 include 'db.php';

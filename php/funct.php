@@ -19,6 +19,20 @@ function ServerMessage($message, $path) {
     die;
 }
 
+function required_field($required_field, $form_data) {
+    foreach ($required_field as $field => $validation) {
+        if (!array_key_exists($field, $form_data)) {
+            ServerMessage("Вы не заполнили обязательное поле $field", '../html/registration.html');
+        }
+
+        if (!empty($validation) && !filter_var($form_data[$field], $validation)) {
+            ServerMessage('Ошибка валидации', '../html/registration.html');
+        }
+
+        ${$field} = $form_data[$field];
+    }
+}
+
 function field_length($min, $max) {
     if (!$min < $max) {
         ServerMessage('Поле не соответствует приемлимой длинне');
@@ -31,16 +45,4 @@ function unique_field($db_field, $form_field, $db_connect, $path) {
         ServerMessage("Такой $db_field уже занят", $path);
     }
 }
-
-//
-//function mysqli_query($db,$sqli) {
-//    $res = mysqli_query($db,$sqli);
-//
-//    if (!$res) {
-//        ServerMessage('Неверный запрос к БД');
-//    }
-//
-//    return $res;
-//}
-//
 

@@ -27,6 +27,14 @@
     background-size: 100% 600px;
 }
 
+.users-block__pagination {
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+.users-block__pagination a {
+    margin-right: 8px;
+}
 /* users-form */
 
 .form-users {

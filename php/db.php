@@ -11,7 +11,7 @@
 $db_connect = mysqli_connect('localhost', 'root', 'love1lost', 'asos');
 
 if (!$db_connect) {
-    ServerMessage('GOVNO', '../html/auth.html');
+    ServerMessage('DB connect error', '../html/auth.html');
 }
 
 

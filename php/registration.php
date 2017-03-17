@@ -24,17 +24,8 @@ if (isset($_POST['registration'])) {
         'password' => ''
     ];
 
-    foreach ($required_field as $field => $validation) {
-        if (!array_key_exists($field, $form_data)) {
-            ServerMessage("Вы не заполнили обязательное поле $field", '../html/registration.html');
-        }
+    required_field($required_field, $form_data);
 
-        if (!empty($validation) && !filter_var($form_data[$field], $validation)) {
-            ServerMessage('Ошибка валидации', '../html/registration.html');
-        }
-
-        ${$field} = $form_data[$field];
-    }
 
 //Проверим поля на длинну.
     if (strlen($form_data['password']) < '8') {

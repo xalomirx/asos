@@ -23,17 +23,7 @@ if (isset($_POST['userform'])) {
         'id' => ''
     ];
 
-    foreach ($required_field as $field => $validation) {
-        if (!array_key_exists($field, $form_data)) {
-            ServerMessage("Вы не заполнили обязательное поле $field", '../html/user-form.html');
-        }
-
-        if (!empty($validation) && !filter_var($form_data[$field], $validation)) {
-            ServerMessage('Ошибка валидации', '../html/user-form.html');
-        }
-
-        ${$field} = $form_data[$field];
-    }
+    required_field($required_field,$form_data);
 
     $email = $form_data['email'];
     $username = $form_data['username'];

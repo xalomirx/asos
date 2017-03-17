@@ -13,9 +13,8 @@ ini_set('display_startup_errors', 1);
 if (isset($_GET['search'])) {
 
 
-//    $search = trim($_POST['search']);
-//    $search = htmlspecialchars($_POST['search']);
-    $search = $_GET['search'];
+    $search = trim($_GET['search']);
+    $search = htmlspecialchars($_GET['search']);
     $search_result = '<tr>';
 
     $db_search = mysqli_query($db_connect, "SELECT * FROM users

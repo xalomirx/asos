@@ -19,17 +19,8 @@ if (isset($_POST['authentication'])) {
         'password' => ''
     ];
 
-    foreach ($required_field as $field => $validation) {
-        if (!array_key_exists($field, $form_data)) {
-            ServerMessage("Вы не заполнили обязательное поле $field", '../html/auth.html');
-        }
+    required_field($required_field,$form_data);
 
-        if (!empty($validation) && !filter_var($form_data[$field], $validation)) {
-            ServerMessage('Ошибка валидации', '../html/auth.html');
-        }
-
-        ${$field} = $form_data[$field];
-    }
 
     $email = $form_data['email'];
     $password = md5($form_data['password']);
@@ -55,14 +46,6 @@ if (isset($_POST['authentication'])) {
     header('Location: index.php');
     die;
 
-
-
-//    if (isset($form_data['remember_me'])) {
-//        SetCookie('auth_user', 'checkbox', time() + 60 * 60 * 24, '/');
-//    }
-//
-//    header('Location: index.php');
-//    die;
 }
 
 
