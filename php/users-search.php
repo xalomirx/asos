@@ -17,6 +17,9 @@ if (isset($_GET['search'])) {
     $search = htmlspecialchars($_GET['search']);
     $search_result = '<tr>';
 
+    /**
+     * Опять напомню про COUNT, к примеру
+     */
     $db_search = mysqli_query($db_connect, "SELECT * FROM users
                               WHERE email LIKE '%$search%' OR username LIKE '%$search%'");
 

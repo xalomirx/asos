@@ -19,7 +19,10 @@ $db_email = $db_info['email'];
 $db_username = $db_info['username'];
 $db_age = $db_info['age'];
 
-
+/**
+ * Тут та же претензяи по поводу вложенности
+ * @see authentication.php
+ */
 if (isset($_POST['userform'])) {
     $form_data = $_POST['userform'];
 
@@ -41,7 +44,19 @@ if (isset($_POST['userform'])) {
     $userid = $form_data['id'];
     $age = $form_data['age'];
 
-
+    /**
+     * Зачем аж три запроса, которые можно уместить в один? Чем меньше запросов
+     * к базе, тем лучше. Бд это довольно узкое место в веб-приложениях.
+     * Да, придется пожертвовать описание ошибки, и в любом случе говорить, мол,
+     * сори, такое юзер уже существует, затрайте другие данные.
+     *
+     * $userExists = SELECT COUNT(*) FROM users WHERE (условие 1) OR (условия 2) OR (условие3);
+     *
+     * if ($userExists) ошибка
+     *
+     * Примерно так. Можно и не жертвовать ничем, но тогда надо изворачиватсья.
+     * Так, как выше - проще всего.
+     */
     $a = mysqli_query($db_connect, "SELECT * FROM users WHERE email = '$email' AND id != '$editid'");
     if ($a->num_rows) {
         ServerMessage("Такой email уже занят", '../html/user-form.html');

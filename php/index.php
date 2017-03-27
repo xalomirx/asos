@@ -6,6 +6,12 @@
  * Time: 18:46
  */
 
+/**
+ * Вообще вот тут найс, получилась такая своеобразная единая точка входа.
+ * Да, *немного* неудобно, костыльно, очень запутанно. В таком коже разбираться
+ * сложно. Но намного легче, чем если бы все это было размазано равномерно по файлам.
+ * Когд хуй поймешь где какая функция у тебя объявлено, где что вызывается.
+ */
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -23,31 +29,33 @@ include 'funct.php';
 include 'db.php';
 
 if (isset($_GET['auth'])) {
-unset($_SESSION['username']);
+    unset($_SESSION['username']);
     header('location: index.php');
 }
 
-
+// usredit? А чего не назвал udt? Называй нормально. твой код
+// должен читаться блегко и понятно не только тобой, но и другими
+// людьми. Плохой тон - использовать такие сокрашения.
 switch($mode) {
-    case 'reg':
+    case 'reg': // registration
         include 'registration.php';
         include '../html/registration.html';
         die;
-    case 'auth':
+    case 'auth': // authentication
         include 'authentication.php';
         include '../html/auth.html';
         die;
-    case 'usr':
+    case 'usr': // users-list
         include 'users-list.php';
         include 'delete-user.php';
         include 'users-search.php';
         include '../html/users.html';
         die();
-    case 'usradd':
+    case 'usradd': // user-add
         include 'users-add.php';
         include '../html/user-form.html';
         die();
-    case 'usredit':
+    case 'usredit': //user-edit
         include 'users-edit.php';
         include '../html/user-form.html';
         die();

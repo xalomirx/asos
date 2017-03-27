@@ -10,6 +10,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
+/**
+ * Тут та же претензяи по поводу вложенности
+ * @see authentication.php
+ */
 if (isset($_POST['userform'])) {
     $form_data = $_POST['userform'];
 
